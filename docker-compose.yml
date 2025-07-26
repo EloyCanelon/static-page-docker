@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./front/docker-app 
+    container_name: react_front_cont
+    ports: 
+      - 8080:80
+  backend:
+    build: ./backend
+    container_name: express_backend_cont
+    ports:
+      - 9000:3000
+    stdin_open: true
+    tty: true 
